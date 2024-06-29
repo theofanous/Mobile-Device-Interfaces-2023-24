@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "presentation events"
+        "users users";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    gap: 10px;
+}
+
+.presentation-window {
+    grid-area: presentation;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation-window img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.events-chat {
+    grid-area: events;
+    background-color: #e0e0e0;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.events-chat h2 {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#event-list {
+    list-style: none;
+}
+
+#event-list li {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.user-area {
+    grid-area: users;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.user-section {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 20%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "presentation"
+            "events"
+            "users";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .user-section {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    
+}
